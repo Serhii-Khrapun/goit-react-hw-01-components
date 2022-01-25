@@ -1,12 +1,12 @@
-import User from './components/social-profile/profile';
+import User from './components/Social-profile/Profile';
 import user from './data/social-profile/user.json';
-import Statistics from './components/statistics/statistics';
+import Statistics from './components/Statistics/Statistics';
 import data from './data/statistics/data.json';
-import FriendList from './components/friend-list/friend-list';
+import FriendList from './components/Friend-list/Friend-list';
 import friends from './data/friend-list/friends.json';
-import TransactionHistory from './components/transaction-history/transactions';
+import TransactionHistory from './components/Transaction-history/Transactions';
 import transactions from './data/transaction-history/transactions.json';
-import { Container } from './components/container/container.styled';
+import { Container } from './components/Container/container.styled';
 
 export default function App() {
   return (
@@ -17,9 +17,7 @@ export default function App() {
           tag={user.tag}
           location={user.location}
           avatar={user.avatar}
-          followers={user.stats.followers}
-          views={user.stats.views}
-          likes={user.stats.likes}
+          stats={user.stats}
         />
         <Statistics title="Upload stats" stats={data} />
         <FriendList friends={friends} />

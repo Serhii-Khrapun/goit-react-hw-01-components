@@ -11,15 +11,7 @@ import {
   ListEl,
 } from './profile.styled';
 
-export default function User({
-  userName,
-  tag,
-  location,
-  avatar,
-  followers,
-  views,
-  likes,
-}) {
+export default function User({ userName, tag, location, avatar, stats }) {
   return (
     <Profile>
       <Description>
@@ -32,15 +24,15 @@ export default function User({
       <List>
         <ListEl>
           <Label>Followers</Label>
-          <Quantity>{followers}</Quantity>
+          <Quantity>{stats.followers}</Quantity>
         </ListEl>
         <ListEl>
           <Label>Views</Label>
-          <Quantity>{views}</Quantity>
+          <Quantity>{stats.views}</Quantity>
         </ListEl>
         <ListEl>
           <Label>Likes</Label>
-          <Quantity>{likes}</Quantity>
+          <Quantity>{stats.likes}</Quantity>
         </ListEl>
       </List>
     </Profile>
@@ -51,7 +43,5 @@ User.propTypes = {
   userName: PropTypes.string,
   tag: PropTypes.string,
   location: PropTypes.string,
-  followers: PropTypes.number,
-  views: PropTypes.number,
-  likes: PropTypes.number,
+  stats: PropTypes.objectOf(PropTypes.number),
 };
